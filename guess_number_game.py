@@ -2,26 +2,30 @@ __author__ = 'weekendlu'
 #coding=utf-8
 import random
 
-min_num = int(raw_input('input the min number:'))
-max_num = int(raw_input('input the max number:'))
+def guessnumber(min_num=0, max_num=100):
 
-x = random.randint(min_num + 1, max_num - 1)
+	#min_num = int(raw_input('input the min number:'))
+	#max_num = int(raw_input('input the max number:'))
 
-print min_num, '-', max_num,
+	x = random.randint(min_num + 1, max_num - 1)
 
-y = int(raw_input(':'))
+	print min_num, '-', max_num,
 
-while y != x:
-	if y >= max_num:
-		print 'holy fuck!', min_num, '-', max_num,
-	elif y <= min_num:
-		print 'holy shit!', min_num, '-', max_num,
-	if x < y < max_num:
-		max_num = y
-		print min_num, '-', max_num,
-	elif min_num < y < x:
-		min_num = y
-		print min_num, '-', max_num,
 	y = int(raw_input(':'))
 
-print 'you are goddamn right!'
+	while y != x:
+		if y >= max_num:
+			print 'holy fuck!', min_num, '-', max_num,
+		elif y <= min_num:
+			print 'holy shit!', min_num, '-', max_num,
+		if x < y < max_num:
+			max_num = y
+			print min_num, '-', max_num,
+		elif min_num < y < x:
+			min_num = y
+			print min_num, '-', max_num,
+		y = int(raw_input(':'))
+
+	print 'you are goddamn right!'
+
+guessnumber()
